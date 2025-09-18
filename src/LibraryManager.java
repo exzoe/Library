@@ -7,7 +7,7 @@ public class LibraryManager {
     public void addRoom(Room room) {
         rooms.add(room);
     }
-    public Book findBookEverywhere(int bookId) {
+    public Book findBookById(int bookId) {
         for (Room room : rooms) {
             for (Closet closet : room.getClosets()) {
                 for (Shelf shelf : closet.getShelfs()) {
@@ -19,6 +19,29 @@ public class LibraryManager {
             }
         }
         return null;
+    }
+
+    public Book findBookByTitle(String bookTitle) {
+        for (Room room : rooms) {
+            for (Closet closet : room.getClosets()) {
+                for (Shelf shelf : closet.getShelfs()) {
+                    Book book = shelf.findBookByTitle(bookTitle);
+                    if (book != null) {
+                        return book;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public Room findRoomById(int roomId) {
+        for (Room room : rooms) {
+            if (room.getRoomId() == roomId) {
+                return room;
+            }
+        }
+        throw new IllegalArgumentException("Комнаты с ID " + roomId + " не существует");
     }
 
     public void addBookToLocation(Book book, int roomId, int closetId, int shelfId) {

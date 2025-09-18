@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Shelf {
     private List<Book> books = new ArrayList<>();
@@ -34,6 +35,14 @@ public class Shelf {
             }
         }
         throw new IllegalArgumentException("Книги с ID " + bookId + " нет на полке " + shelfId);
+    }
+    public Book findBookByTitle(String bookTitle) {
+        for (Book book : books) {
+            if (Objects.equals(bookTitle, book.getTitle())){
+                return book;
+            }
+        }
+        throw new IllegalArgumentException("Книги с названием " + bookTitle + " нет на полке " + shelfId);
     }
 
 }
