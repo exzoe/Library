@@ -35,6 +35,6 @@ public class Closet {
                 return shelf;
             }
         }
-        throw new IllegalArgumentException("Полки с ID " + shelfId + " в шкафу " + closetId);
+        throw new IllegalArgumentException("Полки с ID " + shelfId + " в шкафу " + closetId + " не существует");
     }
 }

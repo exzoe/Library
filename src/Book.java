@@ -4,11 +4,11 @@ public class Book {
     private final int pages;
     private final int id;
 
-    public Book(String title, String author, int pages, int id) {
+    public Book(String title, String author, int pages) {
         this.title = title;
         this.author = author;
         this.pages = pages;
-        this.id = id;
+        this.id = Shelf.idCount++;
     }
 
     public String getTitle() {

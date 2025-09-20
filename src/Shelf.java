@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Shelf {
     private List<Book> books = new ArrayList<>();
     private final int shelfId;
+    public static int idCount = 0;
 
     public Shelf(List<Book> books, int shelfId) {
         this.books = books;
@@ -23,6 +24,7 @@ public class Shelf {
 
     public void addBook(Book book) {
         books.add(book);
+        System.out.println("Книга "+ book.getTitle() + " успешно добавлена!");
     }
     public void removeBook(Book book) {
         books.remove(book);
@@ -34,7 +36,7 @@ public class Shelf {
                 return book;
             }
         }
-        throw new IllegalArgumentException("Книги с ID " + bookId + " нет на полке " + shelfId);
+        return null;
     }
     public Book findBookByTitle(String bookTitle) {
         for (Book book : books) {
@@ -42,7 +44,8 @@ public class Shelf {
                 return book;
             }
         }
-        throw new IllegalArgumentException("Книги с названием " + bookTitle + " нет на полке " + shelfId);
+
+        return null;
     }
 
 }

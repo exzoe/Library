@@ -14,6 +14,7 @@ public class ConsoleInterface {
     private Closet currentCloset;
     private Shelf currentShelf;
     private LibraryManager libraryManager;
+    private Book tempBook;
 
     public ConsoleInterface(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
@@ -58,6 +59,20 @@ public class ConsoleInterface {
                 enterRoom(room);
                 break;
             case 2:
+                System.out.println("Введите ID книги: ");
+                int bookId = scanner.nextInt();
+                tempBook = libraryManager.findBookById(bookId);
+                System.out.println(tempBook.toString());
+                currentState = State.MAIN_MENU;
+                break;
+            case 3:
+                System.out.println("Введите название книги: ");
+                String bookTitle = scanner.nextLine();
+                tempBook = libraryManager.findBookByTitle(bookTitle);
+                System.out.println(tempBook.toString());
+                currentState = State.MAIN_MENU;
+                break;
+            case 4:
                 System.exit(0);
                 break;
             default:
@@ -115,6 +130,18 @@ public class ConsoleInterface {
                 }
                 break;
             case 2:
+                System.out.println("Добавление новой книги");
+                System.out.println("Введите название книги: ");
+                String newTitle = scanner.nextLine();
+                System.out.println("Введите автора книги: ");
+                String newAuthor = scanner.nextLine();
+                System.out.println("Введите количество страниц в книге: ");
+                int newPages = scanner.nextInt();
+                Book newBook = new Book(newTitle, newAuthor, newPages);
+                this.currentShelf.addBook(newBook);
+                currentState = State.IN_SHELF;
+                break;
+            case 3:
                 goBack();
                 break;
             case 0:
@@ -185,7 +212,9 @@ public class ConsoleInterface {
     private void showMainMenu() {
         System.out.println("Добро пожаловать в библиотеку");
         System.out.println("1. Выбрать комнату");
-        System.out.println("2. Выход");
+        System.out.println("2. Найти книгу по ID");
+        System.out.println("3. Найти книгу по названию");
+        System.out.println("4. Выход");
     }
 
     private void showRoomMenu(Room room) {
@@ -205,7 +234,8 @@ public class ConsoleInterface {
     private void showShelfMenu(Shelf shelf) {
         System.out.println("Полка " + shelf.getShelfId());
         System.out.println("1. Показать книги");
-        System.out.println("2. Назад");
+        System.out.println("2. Добавить книгу на полку");
+        System.out.println("3. Назад");
         System.out.println("0. В главное меню");
     }
 }
