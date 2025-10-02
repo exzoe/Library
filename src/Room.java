@@ -38,3 +38,4 @@ public class Room {
         throw new IllegalArgumentException("Шкафа с ID " + closetId + " в комнате " + roomId + " не существует");
     }
 }
+ 
