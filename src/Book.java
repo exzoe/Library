@@ -32,3 +32,4 @@ public class Book {
         return "Книга. Название = " + title + ", автор = " + author + ", кол-во страниц = " + pages + ", ID = " + id;
     }
 }
+ 
