@@ -238,4 +238,4 @@ public class ConsoleInterface {
         System.out.println("3. Назад");
         System.out.println("0. В главное меню");
     }
-}
+} 
