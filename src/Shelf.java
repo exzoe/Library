@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Shelf {
+public class Shelf { 
     private List<Book> books = new ArrayList<>();
     private final int shelfId;
     public static int idCount = 0;
