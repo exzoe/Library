@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ConsoleInterface {
+public class ConsoleInterface { 
     private enum State {
         MAIN_MENU,
         IN_ROOM,
