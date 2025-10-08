@@ -1,4 +1,4 @@
-public class Book {
+public class Book { 
     private final String title;
     private final String author;
     private final int pages;
