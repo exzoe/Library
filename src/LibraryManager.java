@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibraryManager {
+public class LibraryManager { 
     private List<Room> rooms = new ArrayList<>();
 
     public void addRoom(Room room) {
