@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Closet {
+public class Closet { 
     private List<Shelf> shelfs = new ArrayList<>();
     private final int closetId;
 
