@@ -1,4 +1,6 @@
-import Errors.ClosetNotFoundException;
+package library.core;
+
+import library.core.Errors.ClosetNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;

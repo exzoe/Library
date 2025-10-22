@@ -1,3 +1,5 @@
+package library.core;
+
 import java.util.Scanner;
 
 public class ConsoleInterface {

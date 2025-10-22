@@ -1,4 +1,4 @@
-package Errors;
+package library.core.Errors;
 
 public class ClosetNotFoundException extends RuntimeException {
     public ClosetNotFoundException(String message) {
