@@ -1,3 +1,5 @@
+import Errors.ClosetNotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class Room {
     public List<Closet> getClosets() {
         return closets;
     }
+
     public int getRoomId() {
         return roomId;
     }
@@ -30,11 +33,9 @@ public class Room {
     }
 
     public Closet findClosetById(int closetId) {
-        for (Closet closet : closets) {
-            if (closet.getClosetId() == closetId) {
-                return closet;
-            }
-        }
-        throw new IllegalArgumentException("Шкафа с ID " + closetId + " в комнате " + roomId + " не существует");
+        return closets.stream()
+                .filter(closet -> closet.getClosetId() == closetId)
+                .findFirst()
+                .orElseThrow(() -> new ClosetNotFoundException("Шкафа с ID " + closetId + " в комнате " + roomId + " не существует"));
     }
 }

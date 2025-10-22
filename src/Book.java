@@ -1,14 +1,16 @@
+import java.util.UUID;
+
 public class Book {
     private final String title;
     private final String author;
     private final int pages;
-    private final int id;
+    private final String id;
 
     public Book(String title, String author, int pages) {
         this.title = title;
         this.author = author;
         this.pages = pages;
-        this.id = Shelf.idCount++;
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getTitle() {
@@ -23,7 +25,7 @@ public class Book {
         return author;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

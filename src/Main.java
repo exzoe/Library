@@ -12,6 +12,7 @@ public class Main {
         Book book3 = new Book("Банак", "Рыра А. А.", 100);
 
 
+
         shelf1.addBook(book1);
         shelf1.addBook(book3);
         closet1.addShelf(shelf1);

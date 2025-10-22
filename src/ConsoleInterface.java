@@ -1,13 +1,6 @@
 import java.util.Scanner;
 
 public class ConsoleInterface {
-    private enum State {
-        MAIN_MENU,
-        IN_ROOM,
-        IN_CLOSET,
-        IN_SHELF
-    }
-
     private Scanner scanner = new Scanner(System.in);
     private State currentState = State.MAIN_MENU;
     private Room currentRoom;
@@ -60,7 +53,7 @@ public class ConsoleInterface {
                 break;
             case 2:
                 System.out.println("Введите ID книги: ");
-                int bookId = scanner.nextInt();
+                String bookId = scanner.nextLine();
                 tempBook = libraryManager.findBookById(bookId);
                 System.out.println(tempBook.toString());
                 currentState = State.MAIN_MENU;
