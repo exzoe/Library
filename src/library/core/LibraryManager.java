@@ -1,7 +1,9 @@
-import Errors.BookNotFoundException;
-import Errors.ClosetNotFoundException;
-import Errors.RoomNotFoundException;
-import Errors.ShelfNotFoundException;
+package library.core;
+
+import library.core.Errors.BookNotFoundException;
+import library.core.Errors.ClosetNotFoundException;
+import library.core.Errors.RoomNotFoundException;
+import library.core.Errors.ShelfNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;

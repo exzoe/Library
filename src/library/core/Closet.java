@@ -1,4 +1,6 @@
-import Errors.ShelfNotFoundException;
+package library.core;
+
+import library.core.Errors.ShelfNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
